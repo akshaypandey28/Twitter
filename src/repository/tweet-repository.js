@@ -29,13 +29,22 @@ class TweetRepository {
                 populate: {
                     path: 'comments'
                 }
-            }).lean();
+            }).lean(); //lean() is used to convert the mongoose document into a plain javascript object, so that we can add new properties to it
             return tweet;
         } catch (error) {
             console.log(error);
         }
     }
 
+    async getAll(offset, limit) {
+        try {
+            const tweet = await Tweet.find().skip(offset).limit(limit);
+            return tweet;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
     async update(tweetId,data){
         try{
             const tweet = await Tweet.findByIdAndUpdate(tweetId,data,{new: true});
