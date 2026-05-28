@@ -9,6 +9,7 @@ class TweetRepository {
         }
         catch(error){
             console.log('tweet creation failed at repository layer', error);
+            throw error;
         }
     }
 
@@ -19,6 +20,7 @@ class TweetRepository {
         }
         catch(error){
             console.log('tweet finding failed at repository layer', error);
+            throw error;
         }
     }
 
@@ -33,6 +35,7 @@ class TweetRepository {
             return tweet;
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
 
@@ -42,6 +45,7 @@ class TweetRepository {
             return tweet;
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
     
@@ -52,6 +56,7 @@ class TweetRepository {
         }
         catch(error){
             console.log('tweet updating failed at repository layer', error);
+            throw error;
         }
     }
 
@@ -62,6 +67,7 @@ class TweetRepository {
         }
         catch(error){
             console.log('tweet deletion failed at repository layer', error);
+            throw error;
         }
     }
 }
