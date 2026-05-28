@@ -3,16 +3,14 @@ const mongoose = require('mongoose');
 const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not the model
     content:{
         type: String,
-        required: true
+        required: true,
+        max: [250, 'Tweet cannot be more than 250 characters']
     },
-    userEmail:{
-        type: String,
-        required: true
-    },
-    comments:[
+    
+    hashtags:[ //every tweet will have many hashtags
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'Hashtag'
         }
     ]
 }, 
