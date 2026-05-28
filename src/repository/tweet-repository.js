@@ -1,4 +1,4 @@
-const Tweet = require('../models/tweet.js');
+import Tweet from '../models/tweet.js'
 
 class TweetRepository {
 
@@ -72,4 +72,4 @@ class TweetRepository {
     }
 }
 
-module.exports = TweetRepository;
+export default TweetRepository;

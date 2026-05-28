@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not the model
     content:{
@@ -20,4 +20,4 @@ const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not th
 
 const Tweet = mongoose.model('Tweet', tweetSchema); //model is created using the schema
 
-module.exports = Tweet;
+export default Tweet;
