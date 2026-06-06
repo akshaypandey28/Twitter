@@ -12,7 +12,16 @@ const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not th
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Hashtag'
         }
-    ]
+    ],
+
+    likes:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref: 'Like'
+        }
+    ],
+
+    
 }, 
     { timestamps: true }
 );
