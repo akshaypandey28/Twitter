@@ -51,8 +51,13 @@ class TweetService {
             }
         );
 
-
-        return tweet;
+        //return tweet;
+        //because if i return tweet then it will not have hashtag ids so it will return empty array[]
+        //because i have to update the tweet with hashtag ids after creating the tweet, so i 
+        //have to fetch the updated tweet from database and return it
+        
+        const updatedTweet = await this.tweetRepository.get(tweet._id);
+        return updatedTweet;
     }
 
     async get(tweetId) {
