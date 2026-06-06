@@ -1,6 +1,11 @@
 import Tweet from '../models/tweet.js'
+import CrudRepository from './crud-repository.js';
 
-class TweetRepository {
+class TweetRepository extends CrudRepository {
+
+    constructor(){
+        super(Tweet);
+    }
 
     async create(data) {
         try{
@@ -9,17 +14,6 @@ class TweetRepository {
         }
         catch(error){
             console.log('tweet creation failed at repository layer', error);
-            throw error;
-        }
-    }
-
-    async get(id){
-        try{
-            const tweet = await Tweet.findById(id);
-            return tweet;
-        }
-        catch(error){
-            console.log('tweet finding failed at repository layer', error);
             throw error;
         }
     }
@@ -49,27 +43,6 @@ class TweetRepository {
         }
     }
     
-    async update(tweetId,data){
-        try{
-            const tweet = await Tweet.findByIdAndUpdate(tweetId,data,{new: true});
-            return tweet;
-        }
-        catch(error){
-            console.log('tweet updating failed at repository layer', error);
-            throw error;
-        }
-    }
-
-    async destroy(id){
-        try{
-            const tweet = await Tweet.findByIdAndDelete(id);
-            return tweet;
-        }
-        catch(error){
-            console.log('tweet deletion failed at repository layer', error);
-            throw error;
-        }
-    }
 }
 
 export default TweetRepository;
