@@ -28,6 +28,9 @@ const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not th
         }
     ],
 
+    image:{
+        type: String
+    }
     
 }, 
     { timestamps: true }
