@@ -6,7 +6,7 @@ const commentSchema = new mongoose.Schema({
         required: true
     },
 
-    userId: {
+    userId: { //who created the comment
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
@@ -23,7 +23,7 @@ const commentSchema = new mongoose.Schema({
         required: true,
         refPath: 'onModel'
     },
-    
+
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
