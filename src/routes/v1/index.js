@@ -15,7 +15,7 @@ router.get('/tweets/:id',getTweet);
 router.post('/likes/toggle',toggleLike);
 
 //routes related to comments
-router.post('/comments', createComment);
+router.post('/comments', authenticate,createComment);
 
 
 //routes related to users (signUp and login)
