@@ -21,6 +21,13 @@ const tweetSchema = new mongoose.Schema({ //it's only creation of schema, not th
         }
     ],
 
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref: 'Comment'
+        }
+    ],
+
     
 }, 
     { timestamps: true }
